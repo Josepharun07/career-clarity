@@ -169,4 +169,4 @@ Joseph Arun - [GitHub](https://github.com/Josepharun07)
 
 ---
 
-**Built as a 48-hour MVP for a cognitive-based hiring platform**
+
