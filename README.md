@@ -1,172 +1,61 @@
+Here are two comprehensive Markdown files to include in your repository. 
 
-# Career Clarity
-
-A cognitive-based hiring platform that replaces traditional resumes with verified intelligence portfolios.
-
-## 🌟 Features
-
-- 🧠 **Cognitive Assessment** - Scientifically-backed cognitive profiling
-- 👤 **Dual User Types** - Separate experiences for job seekers and employers
-- 📊 **Visual Portfolios** - Radar chart visualization of cognitive strengths
-- 🔍 **Smart Matching** - Real-time candidate filtering based on cognitive traits
-- 🔐 **Authentication** - Secure MongoDB-backed user system
-- 🎨 **Modern UI** - Clean, professional light theme design
-
-## 🛠️ Tech Stack
-
-- **Framework:** Next.js 16 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Database:** MongoDB (Docker)
-- **Charts:** Recharts
-- **Authentication:** bcryptjs
-
-## 📋 Prerequisites
-
-- Node.js 20.9.0 or higher
-- Docker & Docker Compose
-- npm
-
-## 🚀 Quick Start
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/Josepharun07/career-clarity.git
-cd career-clarity
-```
-
-### 2. Run setup script
-
-```bash
-chmod +x setup.sh
-./setup.sh
-```
-
-This will:
-- ✅ Install dependencies
-- ✅ Start MongoDB in Docker
-- ✅ Create environment variables
-- ✅ Initialize the database
-
-### 3. Start development server
-
-```bash
-npm run dev
-```
-
-Visit: **http://localhost:3001**
-
-## 🌐 User Flows
-
-### Job Seeker Flow
-1. 📝 Sign up at `/login`
-2. 🧠 Complete cognitive assessment
-3. 📊 View/share portfolio with radar chart
-4. 👀 Track employer views
-
-### Employer Flow
-1. 📝 Sign up at `/login/employer`
-2. 🎯 Access candidate dashboard
-3. 🔧 Adjust cognitive trait filters
-4. 🔍 View matching candidates with % scores
-5. 📧 Contact candidates
-
-## 📁 Project Structure
-
-```
-career-clarity/
-├── app/
-│   ├── landing/         # Public landing page
-│   ├── login/           # Job seeker authentication
-│   ├── login/employer/  # Employer authentication
-│   ├── dashboard/       # Job seeker dashboard
-│   ├── portfolio/       # Job seeker portfolio
-│   ├── assessment/      # Cognitive assessment
-│   ├── employer/        # Employer dashboard
-│   └── api/             # API routes
-├── components/          # Reusable components
-├── lib/
-│   ├── contexts/        # React contexts (Auth)
-│   ├── models/          # MongoDB models
-│   └── mockData.ts      # Sample candidate data
-├── docker-compose.yml   # MongoDB container config
-├── setup.sh             # Automated setup script
-└── status.sh            # System status checker
-```
-
-## 🔧 Useful Commands
-
-### Development
-```bash
-npm run dev              # Start dev server
-npm run build            # Build for production
-npm start                # Start production server
-```
-
-### System Management
-```bash
-./status.sh              # Check system status
-./cleanup.sh             # Clean reset
-```
-
-### Docker
-```bash
-docker compose up -d     # Start MongoDB
-docker compose down      # Stop MongoDB
-docker compose logs -f   # View logs
-docker compose restart   # Restart MongoDB
-```
-
-### Database
-```bash
-# View all users
-docker exec -it career-clarity-db mongosh -u admin -p careerclarity2024 --authenticationDatabase admin career_clarity --eval "db.users.find().pretty()"
-
-# Reset database
-docker exec -it career-clarity-db mongosh -u admin -p careerclarity2024 --authenticationDatabase admin career_clarity --eval "db.dropDatabase()"
-```
-
-## 🔐 Environment Variables
-
-Create `.env.local`:
-
-```env
-MONGODB_URI=mongodb://admin:careerclarity2024@localhost:27017/career_clarity?authSource=admin
-NODE_ENV=development
-```
-
-## 📊 Data Models
-
-### User Schema
-- `fullName`: String
-- `email`: String (unique)
-- `password`: String (hashed)
-- `userType`: 'jobseeker' | 'employer'
-- `hasCompletedAssessment`: Boolean
-- `assessmentResults`: Object (Logic, Adaptability, EQ, Spatial, Risk)
-- `companyName`: String (employers only)
-
-## 🎯 MVP Features Completed
-
-- ✅ Landing page with professional design
-- ✅ Separate authentication for job seekers and employers
-- ✅ MongoDB integration with Docker
-- ✅ Cognitive assessment flow (mock questions)
-- ✅ Portfolio generation with radar charts
-- ✅ Employer dashboard with real-time filtering
-- ✅ Match percentage calculation
-- ✅ Protected routes based on user type
-- ✅ Responsive design with Tailwind CSS
-
-## 📝 License
-
-MIT
-
-## 👨‍💻 Author
-
-Joseph Arun - [GitHub](https://github.com/Josepharun07)
+The **`README.md`** provides a high-level overview of your project and CI/CD architecture for anyone viewing your GitHub, while the **`SUBMISSION_GUIDE.md`** acts as a detailed step-by-step reproduction manual specifically written for your marker [3].
 
 ---
 
+### File 1: `README.md` (Place in your repository root)
+
+Save the following content as **`README.md`** in your GitHub repository.
+
+```markdown
+# Career Clarity — Jenkins DevOps Pipeline
+
+Career Clarity is a responsive web application designed to facilitate career assessments, user onboarding, and profile portfolios [3]. This repository houses the core codebase alongside a fully automated, production-ready Jenkins CI/CD pipeline [3]. The pipeline orchestrates automated building, comprehensive unit/integration testing, static code analysis (SonarQube), third-party security vulnerability scanning (Snyk), staging container deployment, registry release (Docker Hub), and automated prometheus metric verification [3].
+
+---
+
+## 🛠️ Technology Stack
+
+- **Core Application:** Next.js (Node.js runtime, TypeScript) [3]
+- **Database:** MongoDB [3]
+- **CI/CD Orchestration:** Jenkins LTS [3]
+- **Testing:** Jest & React Testing Library [3]
+- **Static Code Analysis:** SonarQube Community Edition [3]
+- **Vulnerability Scanning:** Snyk CLI [3]
+- **Containerization & Staging Deployment:** Docker Engine & Custom Bridge Networks [3]
+- **Monitoring & Metrics:** Prometheus Server & Google cAdvisor [3]
+
+---
+
+## 🚀 Pipeline Architecture
+
+The pipeline consists of **8 automated stages** designed to enforce strict testing, quality gates, and automated security controls before code reaches the production registry [3].
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│ CHECKOUT  ──>  BUILD  ──>  TEST  ──>  SONAR  ──>  SNYK  ──>  DEPLOY  ──>  RELEASE  ──> MONITOR  │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+1. **Checkout Code:** Retrieves the latest codebase from the GitHub `main` branch [3].
+2. **Build Artifact:** Compiles the Next.js production code and packages the app into a multi-stage, lightweight Docker image [3].
+3. **Test:** Runs unit and integration tests using Jest and React Testing Library, generating an LCOV coverage report [3].
+4. **Code Quality (SonarQube):** Analyzes the code for quality, duplicate blocks, design flaws, and imports the test coverage report [3].
+5. **Quality Gate:** Webhook integration pauses the pipeline, waiting for SonarQube's analysis; the pipeline aborts if quality criteria are not met [3].
+6. **Security (Snyk):** Evaluates `package.json` for vulnerable dependencies and inspects the container's base layers (`Dockerfile`) for system vulnerabilities [3].
+7. **Deploy (Staging):** Automatically spins up MongoDB (`mongo:7.0`) and the Next.js web application containers locally, isolated on a custom bridge network (`career-clarity-network`) [3].
+8. **Release (Docker Hub):** Safely logs into Docker Hub via Jenkins Credentials and pushes the built image with both versioned and `:latest` tags [3].
+9. **Monitoring & Health Check:** Performs native Docker inspects on the running containers and queries Prometheus targets to ensure cAdvisor metric scraping is live [3].
+
+---
+
+## 📁 Repository Files
+
+- **`Dockerfile`**: Production multi-stage build configuration optimized for Next.js [3].
+- **`Jenkinsfile`**: Declarative pipeline script that orchestrates the 8 CI/CD stages [3].
+- **`sonar-project.properties`**: Configuration for SonarQube scanner source paths and test exclusions [3].
+- **`tsconfig.sonar.json`**: Specialized TypeScript configuration used to eliminate parser compilation conflicts during SonarQube analysis [3].
+- **`__tests__/`**: Home to Jest unit tests (UI validation) and integration tests (validation logic) [3].
+```
 
