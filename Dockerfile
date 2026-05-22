@@ -14,6 +14,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 # Disable Next.js telemetry during build
 ENV NEXT_TELEMETRY_DISABLED 1
+ENV MONGODB_URI mongodb://localhost:27017/build-db
+
 RUN npm run build
 
 # Production image, copy all the files and run next
