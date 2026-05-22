@@ -1,14 +1,4 @@
-Here are two comprehensive Markdown files to include in your repository. 
 
-The **`README.md`** provides a high-level overview of your project and CI/CD architecture for anyone viewing your GitHub, while the **`SUBMISSION_GUIDE.md`** acts as a detailed step-by-step reproduction manual specifically written for your marker [3].
-
----
-
-### File 1: `README.md` (Place in your repository root)
-
-Save the following content as **`README.md`** in your GitHub repository.
-
-```markdown
 # Career Clarity — Jenkins DevOps Pipeline
 
 Career Clarity is a responsive web application designed to facilitate career assessments, user onboarding, and profile portfolios [3]. This repository houses the core codebase alongside a fully automated, production-ready Jenkins CI/CD pipeline [3]. The pipeline orchestrates automated building, comprehensive unit/integration testing, static code analysis (SonarQube), third-party security vulnerability scanning (Snyk), staging container deployment, registry release (Docker Hub), and automated prometheus metric verification [3].
