@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create new user with explicit userType
-    const userData = {
+    const userData: any = {
       fullName,
       email: email.toLowerCase(),
       password: hashedPassword,
